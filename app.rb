@@ -1,6 +1,7 @@
 require 'sinatra'
+require './lib/birthday'
 
-class Birthday < Sinatra::Base
+class BirthdayApp < Sinatra::Base
   configure do
     enable :sessions
     set :session_secret, ENV['SESSION_SECRET']
@@ -11,12 +12,17 @@ class Birthday < Sinatra::Base
   end
 
   post '/birthday' do
-    session[:name] = params[:name]
+    session[:name]  = params[:name]
+    session[:day]   = params[:day]
+    session[:month] = params[:month]
     redirect '/birthday'
   end
 
   get '/birthday' do
-    @name = session[:name]
+    @name     = session[:name]
+    @day      = session[:day]
+    @month    = session[:month]
+    @birthday = Birthday.new
     erb :birthday
   end
 end
