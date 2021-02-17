@@ -1,2 +1,2 @@
 require './app'
-run Birthday
+run BirthdayApp

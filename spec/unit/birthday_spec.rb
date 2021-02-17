@@ -34,8 +34,8 @@ describe Birthday do
     end
 
     it 'returns 300 when given 65 days ago' do
-      time = Time.now - 60 * 60 * 24 * 65
-      day = time.strftime('%d')
+      time  = Time.now - 60 * 60 * 24 * 65
+      day   = time.strftime('%d')
       month = time.strftime('%B')
       expect(subject.time_until_bday(day, month)).to be 300
     end
