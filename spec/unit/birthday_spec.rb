@@ -1,17 +1,23 @@
 require 'birthday'
 
 describe Birthday do
+  let(:month) { Time.now.strftime('%B') }
+
   describe '#today?' do
     it 'returns true when given date is today' do
       day   = Time.now.strftime('%d')
       month = Time.now.strftime('%B')
       expect(subject.today?(day, month)).to be true
     end
+
+    it 'returns false when given date is not today' do
+      day = (Time.now + 60 * 60 * 48).strftime('%d')
+      expect(subject.today?(day, month)).to be false
+    end
   end
 
   describe '#time_until_bday' do
-    let(:day)        { (Time.now + 60 * 60 * 24).strftime('%d') }
-    let(:month)      { Time.now.strftime('%B') }
+    let(:day) { (Time.now + 60 * 60 * 24).strftime('%d') }
 
     it 'returns 1 when given tomorrow' do
       expect(subject.time_until_bday(day, month)).to be 1
