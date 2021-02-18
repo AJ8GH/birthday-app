@@ -2,10 +2,10 @@
 
 <form class="form" action="/birthday" method="post">
   <h2>What's your name?</h2>
-  <input type="text" name="name" placeholder="Name">
+  <input required type="text" name="name">
 
   <h2>When's your birthday?</h2>
-  Day:<input type="text" name="day">Month:<select name="month">
+  Day:<input required class="day" type="text" name="day">Month:<select class="month" name="month">
     <option value="January">January</option>
     <option value="February">February</option>
     <option value="March">March</option>
@@ -18,7 +18,7 @@
     <option value="October">October</option>
     <option value="November">November</option>
     <option value="December">December</option>
-  </select>
+  </select><br>
   <input class="submit" type="submit" value="Go!">
 </form>
   
