@@ -1,9 +1,9 @@
 require 'birthday'
 require 'timecop'
 
-describe Birthday do
-  ONE_DAY = 60 * 60 * 24 
+ONE_DAY = 60 * 60 * 24
 
+describe Birthday do
   let(:now) { Time.now }
   before    { Timecop.freeze(now) }
 
