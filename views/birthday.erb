@@ -1,5 +1,1 @@
-<% if @birthday.today?(@day, @month) %>
-  <h1 class="bday">Happy Birthday <%= @name %>!</h1>
-<% else %>
-  <h1 class="bday">Your birthday will be in <%= @birthday.time_until_bday(@day, @month) %> <%= @name %>
-<% end %>
+<h1 class="bday"><%= @birthday.message %><%= @name %>!</h1>

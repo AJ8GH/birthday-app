@@ -1,43 +1,50 @@
 require 'birthday'
+require 'timecop'
 
 describe Birthday do
-  let(:month) { Time.now.strftime('%B') }
+  ONE_DAY = 60 * 60 * 24 
 
-  describe '#today?' do
-    it 'returns true when given date is today' do
-      day   = Time.now.strftime('%d')
-      month = Time.now.strftime('%B')
-      expect(subject.today?(day, month)).to be true
+  let(:now) { Time.now }
+  before    { Timecop.freeze(now) }
+
+  describe '#birthday_message' do
+    it 'returns Happy Birthday on birthday' do
+      day      = now.day
+      month    = now.strftime('%B')
+      birthday = described_class.new(day, month)
+      expect(birthday.message).to eq 'Happy Birthday '
     end
 
-    it 'returns false when given date is not today' do
-      day = (Time.now + 60 * 60 * 48).strftime('%d')
-      expect(subject.today?(day, month)).to be false
-    end
-  end
-
-  describe '#time_until_bday' do
-    let(:day) { (Time.now + 60 * 60 * 24).strftime('%d') }
-
-    it 'returns 1 when given tomorrow' do
-      expect(subject.time_until_bday(day, month)).to eq '1 day'
+    it "returns birthday in 1 day when given tomorrow" do
+      tomorrow = now + ONE_DAY
+      day      = tomorrow.day
+      month    = tomorrow.strftime('%B')
+      birthday = described_class.new(day, month)
+      expect(birthday.message).to eq "Your birthday will be in 1 day "
     end
 
-    it 'returns 29 when given 4 weeks away + 1 day' do
-      next_month = (Time.now + 60 * 60 * 24 * 30).strftime('%B')
-      expect(subject.time_until_bday(day, next_month)).to eq '29 days'
+    it 'returns birthday in 35 days when 35 days away' do
+      forward_35_days = now + ONE_DAY * 35
+      day             = forward_35_days.day
+      month           = forward_35_days.strftime('%B')
+      birthday        = described_class.new(day, month)
+      expect(birthday.message).to eq 'Your birthday will be in 35 days '
     end
 
-    it 'returns 358 when given 1 week ago' do
-      day = (Time.now - 60 * 60 * 24 * 7).strftime('%d')
-      expect(subject.time_until_bday(day, month)).to eq '358 days'
+    it 'returns birthday in 364 days when given yesterday' do
+      yesterday = now - ONE_DAY
+      day       = yesterday.day
+      month     = yesterday.strftime('%B')
+      birthday  = described_class.new(day, month)
+      expect(birthday.message).to eq 'Your birthday will be in 364 days '
     end
 
-    it 'returns 300 when given 65 days ago' do
-      time  = Time.now - 60 * 60 * 24 * 65
-      day   = time.strftime('%d')
-      month = time.strftime('%B')
-      expect(subject.time_until_bday(day, month)).to eq '300 days'
+    it 'returns birthday in 298 days when given 67 days ago' do
+      back_67_days = now - ONE_DAY * 67
+      day          = back_67_days.day
+      month        = back_67_days.strftime('%B')
+      birthday     = described_class.new(day, month)
+      expect(birthday.message).to eq 'Your birthday will be in 298 days '
     end
   end
 end

@@ -5,5 +5,6 @@ require_relative 'feature/web_helpers'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require 'timecop'
 
 Capybara.app = BirthdayApp

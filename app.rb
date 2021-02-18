@@ -20,9 +20,7 @@ class BirthdayApp < Sinatra::Base
 
   get '/birthday' do
     @name     = session[:name]
-    @day      = session[:day]
-    @month    = session[:month]
-    @birthday = Birthday.new
+    @birthday = Birthday.new(session[:day], session[:month])
     erb :birthday
   end
 

@@ -5,6 +5,7 @@
   background-color: rgb(123, 198, 225);
   font-family: 'Helvetica Neue';
   font-size: 25px;
+  text-align: center;
 }
 
 h1 {
@@ -17,21 +18,7 @@ h2 {
   font-size: 30px;
 }
 
-h1, h2 {
-  text-align: center;
-}
-
-.form {
-  text-align: center;
-}
-
-.month {
-  width: 140px;
-  background-color: rgb(230, 230, 230);
-}
-
 input, select {
-  font-family: 'Helvetica Neue';
   height: 40px;
   margin-top: 10px;
   margin-left: 10px;
@@ -44,14 +31,18 @@ input, select {
   width: 60px;
 }
 
-.submit {
-  width: 500px;
-  height: 35px;
-  margin-top: 20px;
+.month {
+  width: 140px;
 }
 
 option {
   font-size: 30px;
+}
+
+.submit {
+  width: 500px;
+  height: 35px;
+  margin-top: 20px;
 }
 
 .bday {
