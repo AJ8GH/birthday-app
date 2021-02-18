@@ -4,7 +4,7 @@ require './lib/birthday'
 class BirthdayApp < Sinatra::Base
   configure do
     enable :sessions
-    set :session_secret, ENV['SESSION_SECRET']
+    set    :session_secret, ENV['SESSION_SECRET']
   end
 
   get '/' do
