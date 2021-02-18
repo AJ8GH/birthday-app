@@ -32,7 +32,7 @@ Install dependencies
 
 Run the app using shotgun
 
-`shotgun config.ru`
+`shotgun config.ru -p 4567`
 
 Or with ruby
 
@@ -40,6 +40,6 @@ Or with ruby
 
 Go to the localhost address in your browser
 
-http://localhost/9393/
+http://localhost/4567/
 
 Then just enter your details and find out how many days left!
