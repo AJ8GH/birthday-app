@@ -34,6 +34,10 @@ Run the app using shotgun
 
 `shotgun config.ru`
 
+Or with ruby
+
+`ruby app.rb`
+
 Go to the localhost address in your browser
 
 http://localhost/9393/

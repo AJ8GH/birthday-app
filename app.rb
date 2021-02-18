@@ -25,4 +25,6 @@ class BirthdayApp < Sinatra::Base
     @birthday = Birthday.new
     erb :birthday
   end
+
+  run! if app_file == $0
 end
