@@ -11,6 +11,11 @@ Learning TDD and feature testing using Capybara and building web applications us
 - `shotgun`
 - `sinatra`
 
+## Testing
+
+Run RSpec from root folder
+- `rspec`
+
 ## Getting started
 
 Clone this repository
@@ -21,15 +26,15 @@ cd into root folder
 
 `cd birthday-app`
 
-install dependencies
+Install dependencies
 
 `bundle install`
 
-run the app using shotgun
+Run the app using shotgun
 
 `shotgun config.ru`
 
-go to the localhost address in your browser
+Go to the localhost address in your browser
 
 http://localhost/9393/
 

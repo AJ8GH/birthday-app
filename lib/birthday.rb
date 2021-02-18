@@ -5,7 +5,8 @@ class Birthday
 
   def time_until_bday(bday, month)
     days = date_to_day(bday, month) - time_to_day(Time.now)
-    days.negative? ? 365 - days.abs : days
+    days = 365 - days.abs if days.negative?
+    days == 1 ? "#{days} day" : "#{days} days"
   end
 
   private

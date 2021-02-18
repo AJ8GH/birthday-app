@@ -20,24 +20,24 @@ describe Birthday do
     let(:day) { (Time.now + 60 * 60 * 24).strftime('%d') }
 
     it 'returns 1 when given tomorrow' do
-      expect(subject.time_until_bday(day, month)).to be 1
+      expect(subject.time_until_bday(day, month)).to eq '1 day'
     end
 
     it 'returns 29 when given 4 weeks away + 1 day' do
       next_month = (Time.now + 60 * 60 * 24 * 30).strftime('%B')
-      expect(subject.time_until_bday(day, next_month)).to be 29
+      expect(subject.time_until_bday(day, next_month)).to eq '29 days'
     end
 
     it 'returns 358 when given 1 week ago' do
       day = (Time.now - 60 * 60 * 24 * 7).strftime('%d')
-      expect(subject.time_until_bday(day, month)).to be 358
+      expect(subject.time_until_bday(day, month)).to eq '358 days'
     end
 
     it 'returns 300 when given 65 days ago' do
       time  = Time.now - 60 * 60 * 24 * 65
       day   = time.strftime('%d')
       month = time.strftime('%B')
-      expect(subject.time_until_bday(day, month)).to be 300
+      expect(subject.time_until_bday(day, month)).to eq '300 days'
     end
   end
 end
