@@ -1,4 +1,6 @@
-# Birthday App
+# Birthday App 🎂
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/142f4b3c8f8b0b7f4429/maintainability)](https://codeclimate.com/github/AJ8GH/birthday-app/maintainability)
 
 Find out how long it is until your birthday!
 
@@ -42,4 +44,17 @@ Go to the localhost address in your browser
 
 http://localhost/4567/
 
-Then just enter your details and find out how many days left!
+## Usage
+
+Enter your details 
+
+![index](public/images/index.png)
+
+Find out how many days to go
+
+![days-to-go](public/images/days_until_bday.png)
+
+Or enjoy your birthday greeting!
+
+![bday](public/images/bday.png)
+
