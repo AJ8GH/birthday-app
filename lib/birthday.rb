@@ -6,7 +6,7 @@ class Birthday
 
   def message
     today?(birthday, birth_month) ? 'Happy Birthday ' :
-    "Your birthday will be in #{time_until_bday(birthday, birth_month)} "
+    "Your birthday will be in #{days_until_bday(birthday, birth_month)} "
   end
 
   private
@@ -17,7 +17,7 @@ class Birthday
     date_to_day(day, month) == time_to_day(Time.now)
   end
 
-  def time_until_bday(day, month)
+  def days_until_bday(day, month)
     days = date_to_day(day, month) - time_to_day(Time.now)
     days = 365 - days.abs if days.negative?
     days == 1 ? "#{days} day" : "#{days} days"
