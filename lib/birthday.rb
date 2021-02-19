@@ -1,6 +1,4 @@
 class Birthday
-  attr_reader :birthday, :birth_month
-
   def initialize(birthday, birth_month)
     @birthday    = birthday
     @birth_month = birth_month
@@ -12,6 +10,8 @@ class Birthday
   end
 
   private
+
+  attr_reader :birthday, :birth_month
 
   def today?(day, month)
     date_to_day(day, month) == time_to_day(Time.now)
