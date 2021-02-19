@@ -1,6 +1,6 @@
 # Birthday App 🎂
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/142f4b3c8f8b0b7f4429/maintainability)](https://codeclimate.com/github/AJ8GH/birthday-app/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/142f4b3c8f8b0b7f4429/maintainability)](https://codeclimate.com/github/AJ8GH/birthday-app/maintainability) [![Build Status](https://travis-ci.com/AJ8GH/birthday-app.svg?branch=main)](https://travis-ci.com/AJ8GH/birthday-app) [![Build Status](https://travis-ci.com/AJ8GH/birthday-app.svg?branch=main)](https://travis-ci.com/AJ8GH/birthday-app)
 
 Find out how long it is until your birthday!
 
@@ -46,7 +46,7 @@ http://localhost/4567/
 
 ## Usage
 
-Enter your details 
+Enter your details
 
 ![index](public/images/index.png)
 
